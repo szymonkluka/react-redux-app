@@ -1,4 +1,5 @@
 const initialState = {
+  searchString: "",
   columns: [
     {
       id: 1,
@@ -14,7 +15,13 @@ const initialState = {
       id: 3,
       title: 'Games',
       icon: 'gamepad',
-    }
+    },
+    {
+      id: '4',
+      listId: '2',
+      title: 'Songs',
+      icon: 'music',
+    },
   ],
 
   cards: [
@@ -26,7 +33,6 @@ const initialState = {
     { id: 6, columnId: 3, title: 'Skyrim' }
   ],
 
-  searchString: "",
 
 };
 
