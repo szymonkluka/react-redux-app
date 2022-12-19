@@ -3,31 +3,19 @@ import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { searchCard } from '../../redux/store';
-import { useEffect } from 'react';
 
 const SearchForm = () => {
-    const [searchCardTitle, setSearchCardTitle] = useState('');
     const dispatch = useDispatch();
-
-    const handleSubmit = (e) => {
+    const [searchString, setSearchString] = useState('');
+    const handleSubmit = e => {
         e.preventDefault();
-        dispatch(searchCard(searchCardTitle));
+        dispatch({ type: 'UPDATE_SEARCHSTRING', payload: { searchString } });
     };
-
-    useEffect(() => {
-        dispatch(searchCard(''));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
     return (
         <form className={styles.searchForm} onSubmit={handleSubmit}>
-            <TextInput
-                onChange={(e) => setSearchCardTitle(e.target.value)}
-                placeholder='Search...'
-            />
+            <TextInput placeholder="Search..." value={searchString} onChange={(e) => setSearchString(e.target.value)} />
             <Button>
-                <span className='fa fa-search' />
+                <span className="fa fa-search" />
             </Button>
         </form>
     );

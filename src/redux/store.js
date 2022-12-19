@@ -2,10 +2,6 @@ import { createStore } from 'redux';
 import initialState from './initialState.js'
 import shortid from 'shortid'
 
-export const getFilteredCards = ({ cards, searchString }, columnId) => cards
-  .filter(card => card.columnId === columnId && card.title.toLowerCase().includes(searchString.toLowerCase()));
-
-export const searchCard = (payload) => ({ type: 'SEARCH_CARD', payload });
 
 const reducer = (state, action) => {
   switch (action.type) {
