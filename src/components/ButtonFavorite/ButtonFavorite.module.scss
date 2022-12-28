@@ -1,0 +1,15 @@
+@import '../../styles/settings.scss';
+
+.button {
+    background: transparent;
+    border: none;
+    color: gray;
+    text-align: center;
+    padding: $base-size 0 $base-size $base-size;
+    cursor: pointer;
+    font-weight: 400;
+
+    &.favorite {
+        color: $color-warning;
+    }
+}

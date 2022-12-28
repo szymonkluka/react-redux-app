@@ -17,6 +17,8 @@ export const getListById = ({ lists }, listId) => lists.find(list => list.id ===
 
 export const getAllLists = ({ lists }) => lists;
 
+export const toggleCardFavorite = payload => ({ type: 'TOGGLE_CARD_FAVORITE', payload });
+
 export const searchStringValue = (state) => state.searchString;
 
 export const getFavoriteCard = (state) => state.cards.filter(card => card.isFavorite === true);
@@ -25,7 +27,10 @@ export const getColumnsByList = ({ columns }, listId) => columns.filter((column)
 
 export const updateSearchString = payload => ({ type: 'UPDATE_SEARCHSTRING', payload });
 
-export const toggleCardFavorite = payload => ({ type: 'TOGGLE_CARD_FAVORITE', payload });
+export const toggleFavorite = (payload) => ({
+  type: 'TOGGLE_CARD_FAVORITE',
+  payload,
+});
 
 export const addList = payload => ({ type: 'ADD_LIST', payload });
 
