@@ -22,7 +22,7 @@ const Card = props => {
     return (
         <div>
             <li className={styles.card}>{props.title}
-                <button onClick={unLike} className={clsx(styles.remove)}><i className="fa-trash"></i></button>
+                <button onClick={unLike} className={clsx(styles.remove)}><i className="fa fa-trash-o"></i></button>
                 <button onClick={toggleFavorite} className={clsx(styles.button, props.isFavorite && styles.isActive)}><i className="fa fa-star-o"></i></button>
 
             </li>
